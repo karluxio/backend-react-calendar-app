@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require('path')
+require('dotenv').config()
 
 const app = express()
 
@@ -11,7 +12,7 @@ app.get('/api/v1', (req, res) => {
 
 app.use(express.static(path.join(__dirname, 'public')))
 
-const PORT = 3000
+const PORT = process.env.PORT
 
 app.listen(PORT, () => {
   console.log(`server running on port ${PORT}`);
