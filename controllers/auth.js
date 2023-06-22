@@ -1,18 +1,20 @@
-const registerController = (req, res) => {
+const { response } = require('express')
+
+const registerController = (req, res = response) => {
   res.json({
     ok: true,
     msg: 'register'
   })
 }
 
-const loginController = (req, res) => {
+const loginController = (req, res = response) => {
   res.json({
     ok: true,
     msg: 'login'
   })
 }
 
-const renewController = (req, res) => {
+const renewTokenController = (req, res = response) => {
   res.json({
     ok: true,
     msg: 'renew'
@@ -22,5 +24,5 @@ const renewController = (req, res) => {
 module.exports = {
   registerController,
   loginController,
-  renewController
+  renewTokenController
 }

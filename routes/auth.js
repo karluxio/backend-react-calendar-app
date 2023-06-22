@@ -4,7 +4,7 @@
  */
 
 const { Router } = require('express')
-const { loginController, renewController, registerController } = require('../controllers/auth')
+const { loginController, renewTokenController, registerController } = require('../controllers/auth')
 
 const router = Router()
 
@@ -12,6 +12,6 @@ router.post('/new', registerController)
 
 router.post('/', loginController)
 
-router.get('/renew', renewController)
+router.get('/renew', renewTokenController)
 
 module.exports = router
