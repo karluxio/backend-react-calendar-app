@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(morgan('dev'))
 
 app.use(express.urlencoded({ extended: true }));
-app.use('/api/users', router)
+app.use('/api/auth', router)
 
 const PORT = process.env.PORT
 
