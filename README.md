@@ -8,6 +8,8 @@ section backend of MERN
   nodemon is a tool that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected.
 - ### git-commit-msg-linter: [npm - git-commit-msg-linter](https://www.npmjs.com/package/git-commit-msg-linter)
   A lightweight, independent, 0 configurations and joyful git commit message linter.
+- ### morgan: [npm - morgan](https://www.npmjs.com/package/morgan)
+  HTTP request logger middleware for node.js.
 
 ### External libraries - prod:
 
