@@ -19,6 +19,8 @@ section backend of MERN
   Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env.
 - ### express-validator: [npm - express-validator](https://www.npmjs.com/package/express-validator)
   An express.js middleware for validator.
+- ### mongose: [npm - mongoose](https://www.npmjs.com/package/mongoose)
+  Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment.
 
 after clone run:
 
