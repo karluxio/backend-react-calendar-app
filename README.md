@@ -21,6 +21,8 @@ section backend of MERN
   An express.js middleware for validator.
 - ### mongose: [npm - mongoose](https://www.npmjs.com/package/mongoose)
   Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment.
+- ### bcrypt: [npm - bcrypt](https://www.npmjs.com/package/bcryptjs)
+  Optimized bcrypt in JavaScript with zero dependencies. Compatible to the C++ bcrypt binding on node.js and also working in the browser.
 
 after clone run:
 
