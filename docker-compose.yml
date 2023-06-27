@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+  db:
+    image: mongo:latest
+    environment:
+      - MONGO_USER=postgres
+      - MONGO_PASSWORD=postgres
+      - MONGO_DB=postgres
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo:/data/db
+volumes:
+  mongo:
