@@ -1,12 +1,12 @@
 const { response, request } = require('express')
+const bcrypt = require('bcryptjs')
+
 const User = require('../models/user')
 
 const registerController = async (req = request, res = response) => {
   const { name, email, password } = req.body
 
   let user = await User.findOne({ email })
-
-
 
   if (user) {
     return res.status(400).json({
@@ -17,12 +17,15 @@ const registerController = async (req = request, res = response) => {
 
   user = new User({ name, email, password })
 
+  const salt = bcrypt.genSaltSync()
+  user.password = bcrypt.hashSync(password, salt)
+
   try {
 
     await user.save()
     res.status(201).json({
       ok: true,
-      uid: user.uid,
+      uid: user._id,
       name: user.name
     })
 
