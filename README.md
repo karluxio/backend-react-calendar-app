@@ -17,6 +17,8 @@ section backend of MERN
   Fast, unopinionated, minimalist web framework for Node.js.
 - ### dotenv: [npm - dotenv](https://www.npmjs.com/package/dotenv)
   Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env.
+- ### express-validator: [npm - express-validator](https://www.npmjs.com/package/express-validator)
+  An express.js middleware for validator.
 
 after clone run:
 
