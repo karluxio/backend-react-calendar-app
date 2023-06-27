@@ -7,11 +7,12 @@ const router = require('./routes/auth')
 
 const app = express()
 
-
+// global middlewares
 app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.json())
 app.use(morgan('dev'))
 
-app.use(express.urlencoded({ extended: true }));
+// routes
 app.use('/api/auth', router)
 
 const PORT = process.env.PORT
