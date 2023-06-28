@@ -90,10 +90,15 @@ const loginController = async (req, res = response) => {
 
 }
 
-const renewTokenController = (req, res = response) => {
+const renewTokenController = async (req, res = response) => {
+
+  const { uid, name } = req
+
+  const token = await generateJWT(uid, name)
+
   res.json({
     ok: true,
-    msg: 'renew'
+    token
   })
 }
 
