@@ -17,6 +17,12 @@ section backend of MERN
   Fast, unopinionated, minimalist web framework for Node.js.
 - ### dotenv: [npm - dotenv](https://www.npmjs.com/package/dotenv)
   Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env.
+- ### compression: [npm - compression](https://www.npmjs.com/package/compression)
+  Node.js compression middleware.
+- ### helmet: [npm - helmet](https://www.npmjs.com/package/helmet)
+  Helmet helps secure Express apps by setting HTTP response headers.
+- ### cors: [npm - cors](https://www.npmjs.com/package/cors)
+  CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
 - ### express-validator: [npm - express-validator](https://www.npmjs.com/package/express-validator)
   An express.js middleware for validator.
 - ### mongose: [npm - mongoose](https://www.npmjs.com/package/mongoose)
