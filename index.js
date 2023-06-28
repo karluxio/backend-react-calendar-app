@@ -15,10 +15,6 @@ const app = express()
 dbConnection()
 
 // global middlewares
-app.use(express.static(path.join(__dirname, 'public')))
-app.use(express.json())
-app.use(compression())
-app.use(helmet())
 app.use(cors(
   {
     //   credentials: true,
@@ -28,6 +24,10 @@ app.use(cors(
     //   preflightContinue: false
   }
 ))
+app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.json())
+app.use(compression())
+app.use(helmet())
 app.use(morgan('dev'))
 
 // routes
