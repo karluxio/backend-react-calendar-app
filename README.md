@@ -29,6 +29,8 @@ section backend of MERN
   Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment.
 - ### bcrypt: [npm - bcrypt](https://www.npmjs.com/package/bcryptjs)
   Optimized bcrypt in JavaScript with zero dependencies. Compatible to the C++ bcrypt binding on node.js and also working in the browser.
+- ### jsonwebtoken: [npm - jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
+  An implementation of json web token.
 
 after clone run:
 
