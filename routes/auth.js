@@ -20,7 +20,8 @@ router.post(
     check('password', 'password length must be at least 6 characters long').isLength({ min: 6 }),
     fieldsValidator
   ],
-  registerController)
+  registerController
+)
 
 router.post(
   '/',
@@ -29,7 +30,8 @@ router.post(
     check('password', 'password length must be at least 6 characters long').isLength({ min: 6 }),
     fieldsValidator
   ],
-  loginController)
+  loginController
+)
 
 router.get('/renew', validateJWT, renewTokenController)
 

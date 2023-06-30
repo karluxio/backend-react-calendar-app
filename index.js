@@ -7,8 +7,6 @@ const compression = require('compression')
 require('dotenv').config()
 const { dbConnection } = require('./database/config')
 
-const router = require('./routes/auth')
-
 const app = express()
 
 // DB
@@ -31,7 +29,8 @@ app.use(helmet())
 app.use(morgan('dev'))
 
 // routes
-app.use('/api/auth', router)
+app.use('/api/auth', require('./routes/auth'))
+app.use('/api/events', require('./routes/events'))
 
 const PORT = process.env.PORT
 
