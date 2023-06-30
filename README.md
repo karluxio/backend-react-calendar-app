@@ -31,6 +31,8 @@ section backend of MERN
   Optimized bcrypt in JavaScript with zero dependencies. Compatible to the C++ bcrypt binding on node.js and also working in the browser.
 - ### jsonwebtoken: [npm - jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
   An implementation of json web token.
+- ### moment: [npm - moment](https://www.npmjs.com/package/moment)
+  A JavaScript date library for parsing, validating, manipulating, and formatting dates.
 
 after clone run:
 
