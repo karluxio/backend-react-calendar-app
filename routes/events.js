@@ -48,6 +48,7 @@ router.put(
 router.delete(
   '/:id',
   [
+    check('id', 'event id is required').not().isEmpty().isMongoId(),
     fieldsValidator
   ],
   deleteEvent

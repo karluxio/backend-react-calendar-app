@@ -86,13 +86,42 @@ const updateEvent = async (req = request, res = response) => {
   }
 }
 
-const deleteEvent = (req = request, res = response) => {
+const deleteEvent = async (req = request, res = response) => {
   const { id } = req.params
+  const { uid } = req
 
-  res.json({
-    ok: true,
-    msg: `DELETE /api/events/${id}`
-  })
+  try {
+    const event = await Event.findById(id)
+
+    if (!event) {
+      return res.status(404).json({
+        ok: false,
+        msg: 'Event not found'
+      })
+    }
+
+    if (event.user.toString() !== uid) {
+      return res.status(401).json({
+        ok: false,
+        msg: 'Not authorized'
+      })
+    }
+
+    await Event.findByIdAndDelete(id)
+
+    res.json({
+      ok: true,
+      deletedEvent: event
+    })
+
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({
+      ok: false,
+      msg: 'Error in deleting event'
+    })
+
+  }
 }
 
 module.exports = {
