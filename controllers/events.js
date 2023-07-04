@@ -45,13 +45,45 @@ const createEvent = async (req = request, res = response) => {
   }
 }
 
-const updateEvent = (req = request, res = response) => {
+const updateEvent = async (req = request, res = response) => {
   const { id } = req.params
+  const { uid } = req
 
-  res.json({
-    ok: true,
-    msg: `PUT /api/events/${id}`
-  })
+  try {
+    const event = await Event.findById(id)
+
+    if (!event) {
+      return res.status(404).json({
+        ok: false,
+        msg: 'Event not found'
+      })
+    }
+
+    if (event.user.toString() !== uid) {
+      return res.status(401).json({
+        ok: false,
+        msg: 'Not authorized'
+      })
+    }
+
+    const eventToUpdate = {
+      ...req.body,
+      user: uid
+    }
+
+    const updatedEvent = await Event.findByIdAndUpdate(id, eventToUpdate, { new: true })
+
+    res.json({
+      ok: true,
+      updatedEvent
+    })
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({
+      ok: false,
+      msg: 'Error in updating event'
+    })
+  }
 }
 
 const deleteEvent = (req = request, res = response) => {

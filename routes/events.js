@@ -36,6 +36,10 @@ router.post(
 router.put(
   '/:id',
   [
+    check('title', 'title is required').not().isEmpty(),
+    check('start', 'start date is required').custom(isDate),
+    check('end', 'end date is required').custom(isDate),
+    check('id', 'event id is required').not().isEmpty().isMongoId(),
     fieldsValidator
   ],
   updateEvent
