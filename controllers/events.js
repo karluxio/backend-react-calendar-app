@@ -2,10 +2,26 @@ const { request, response } = require('express')
 const Event = require('../models/event')
 
 const getEvents = async (req = request, res = response) => {
-  res.json({
-    ok: true,
-    msg: 'GET /api/events'
-  })
+  const { skip, limit } = req.query
+
+  try {
+    const events = await Event
+      .find()
+      .populate('user', 'name')
+      .skip(Number(skip))
+      .limit(Number(limit))
+
+    res.json({
+      ok: true,
+      events
+    })
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({
+      ok: false,
+      msg: 'Error in getting events'
+    })
+  }
 }
 
 const createEvent = async (req = request, res = response) => {
