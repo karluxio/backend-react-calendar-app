@@ -28,7 +28,6 @@ const registerController = async (req = request, res = response) => {
 
     res.status(201).json({
       ok: true,
-      ok: true,
       uid: user._id,
       name: user.name,
       token
@@ -60,7 +59,7 @@ const loginController = async (req, res = response) => {
 
     // confirm password
     const validPassword = bcrypt.compareSync(password, user.password)
-    console.log({ validPassword });
+
     if (!validPassword) {
       return res.status(400).json({
         ok: false,
