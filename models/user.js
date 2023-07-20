@@ -22,13 +22,11 @@ const userSchema = new Schema({
   }
 })
 
-// userSchema.pre('save', async function (next) {
-//   try {
-
-//   } catch (error) {
-
-//   }
-// })
+userSchema.method('toJSON', function () {
+  const { __v, _id, ...object } = this.toObject()
+  object.id = _id
+  return object
+})
 
 const User = model('User', userSchema)
 
