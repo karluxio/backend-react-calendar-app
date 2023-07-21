@@ -22,15 +22,20 @@ app.use(cors(
     //   preflightContinue: false
   }
 ))
-app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.json())
 app.use(compression())
 app.use(helmet())
 app.use(morgan('dev'))
+app.use(express.static(path.join(__dirname, 'public')))
 
 // routes
 app.use('/api/auth', require('./routes/auth'))
 app.use('/api/events', require('./routes/events'))
+
+// allow react spa in public folder
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'))
+})
 
 const PORT = process.env.PORT
 
