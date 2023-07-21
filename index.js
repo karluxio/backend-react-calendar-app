@@ -15,11 +15,11 @@ dbConnection()
 // global middlewares
 app.use(cors(
   {
-    //   credentials: true,
-    //   origin: process.env.FRONTEND_URL,
-    //   optionsSuccessStatus: 200,
-    //   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    //   preflightContinue: false
+    credentials: true,
+    origin: process.env.FRONTEND_URL,
+    optionsSuccessStatus: 200,
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    preflightContinue: false
   }
 ))
 app.use(express.json())
