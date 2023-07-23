@@ -32,11 +32,6 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use('/api/auth', require('./routes/auth'))
 app.use('/api/events', require('./routes/events'))
 
-// allow react spa in public folder
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'))
-})
-
 const PORT = process.env.PORT
 
 app.listen(PORT, () => {
