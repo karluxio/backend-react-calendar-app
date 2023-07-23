@@ -13,13 +13,7 @@ const app = express()
 dbConnection()
 
 // global middlewares
-const corsOptions = {
-  origin: '*',
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  preflightContinue: false,
-  optionsSuccessStatus: 200,
-}
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json())
 app.use(compression())
 app.use(helmet())
