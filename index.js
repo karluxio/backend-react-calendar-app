@@ -13,15 +13,7 @@ const app = express()
 dbConnection()
 
 // global middlewares
-app.use(cors(
-  {
-    credentials: true,
-    origin: process.env.FRONTEND_URL,
-    optionsSuccessStatus: 200,
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    preflightContinue: false
-  }
-))
+app.use(cors())
 app.use(express.json())
 app.use(compression())
 app.use(helmet())
